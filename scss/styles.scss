@@ -1,10 +1,95 @@
-/* Variables */
+@import 'colors';
+@import 'nav';
 
-
-/* Nest Main */
-main {
-    width: 1350px;
-    min-height:535px;
+/* Global */
+* {
+  box-sizing: border-box;
 }
 
-// Mixin or Extend for button
+body {
+  margin: 0;
+  font-family: $font-body;
+  color: $near-black;
+  background: $gold;   // gold outer band
+}
+
+/* White card frame */
+.frame {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  background: $white;
+  padding: 1.25rem 1.5rem 2rem;
+}
+
+/* Main hero */
+.frame {
+  main {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1.1fr 2fr;
+    column-gap: 0;
+    align-items: stretch;
+    min-height: 535px;
+
+    #intro-text {
+      background: $gray;
+      padding: 3rem;
+
+      span {
+        display: block;
+        font-family: $font-script;
+        font-size: 1.6rem;
+        margin-bottom: 1.75rem;
+      }
+
+      h3 {
+        font-family: $font-body;
+        font-size: 2.1rem;
+        line-height: 1.2;
+        margin: 0 0 1rem 0;
+        font-weight: 700;
+      }
+
+      p {
+        max-width: 38ch;
+        line-height: 1.5;
+        margin: 0 0 2rem 0;
+        font-size: 0.95rem;
+      }
+    }
+
+    #intro-image {
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 1.25rem;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Mixin or Extend for button */
+@mixin pill-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  background: $gold;
+  color: $white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+}
+
+/* class name exactly matches HTML */
+.submit-buttton {
+  @include pill-button;
+}
